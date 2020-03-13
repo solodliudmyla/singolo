@@ -52,33 +52,41 @@ a {
 	color: #f06c64;
 	font-weight: normal;
 }
-
-.nav {
-	display: inline-block;
-	margin-top: 40px;
+.nav{
 	float: right;
+	display: inline-block;
+	margin-left: auto;
+	padding-top: 9px;
 }
-
+.nav__menu {
+	display: flex;
+	align-self: center;
+	margin-top: 30px;
+}
+.nav__menu li{
+	display: inline-block;
+}
 .nav__item {
-
-	color: #ffffff;
-	font-size: 12px;
+	display: inline-block;
 	text-transform: uppercase;
-	line-height: 6px;
-	padding: 0;
+	font-size: 12px;
+	font-weight: 700;
+	color: #ffffff;
+}
+ul > li:not(:first-child)::before {
+	content: "·";
+	position: relative;
+	right: -10px;
+	color: #494e62;
 }
 
+.nav__item{
+	padding-left: 23px;
+	letter-spacing: 0.015em;
+}
 .nav a:hover, .nav a:active {
 	color: #f06c64;
 	cursor: pointer;
-}
-
-.nav__dot {
-	color: #494e62;
-	font-weight: bold;
-	width: 3px;
-	margin-right:6px;
-	margin-left: 6px;
 }
 
 .slider {
