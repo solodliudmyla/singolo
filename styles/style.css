@@ -84,9 +84,11 @@ ul > li:not(:first-child)::before {
 	padding-left: 23px;
 	letter-spacing: 0.015em;
 }
-.nav a:hover, .nav a:active {
+
+a:hover, .active {
 	color: #f06c64;
 	cursor: pointer;
+	border: none;
 }
 
 .slider {
