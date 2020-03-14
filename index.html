@@ -21,8 +21,8 @@
 		</div>
 
 		<nav class="nav">
-			<ul  class="nav__menu" id="nav__menu">
-				<li><a class="nav__item " href="#home" >home</a></li>
+			<ul class="nav__menu" id="nav__menu">
+				<li><a class="nav__item " href="#home">home</a></li>
 				<li><a class="nav__item" href="#services">services</a></li>
 				<li><a class="nav__item" href="#portfolio">portfolio</a></li>
 				<li><a class="nav__item" href="#about">about</a></li>
@@ -32,17 +32,30 @@
 	</div>
 </header>
 
-<main class="slider">
-	<div class="wrapper">
-		<span class="before"></span>
-		<a href="#">
-			<img class="arrow arrow-left" alt="" src="assets/images/PhoneSlider/arrow-left.png">
-		</a>
-		<img class="iphone-vertical" alt="" src="assets/images/PhoneSlider/iphone-vertical.png">
-		<img class="iphone-horizontal" alt="" src="assets/images/PhoneSlider/iphone-horizontal.png">
-		<a href="#">
-			<img class="arrow arrow-right" alt="" src="assets/images/PhoneSlider/arrow-right.png">
-		</a>
+<main id="slider">
+	<div class="wrapper container-slider">
+
+		<div class="prev">
+			<a href="#" onclick="plusSlides(-1)">
+				<img alt="" src="assets/images/PhoneSlider/arrow-left.png">
+			</a>
+		</div>
+
+		<div class="mySlides phones"  >
+			<img  class="iphone-vertical" alt="" src="assets/images/PhoneSlider/iphone-vertical-1.png">
+			<img class="iphone-horizontal" alt="" src="assets/images/PhoneSlider/iphone-horizontal-1.png">
+		</div>
+
+		<div class="mySlides">
+			<img class="blue-phone" alt="" src="assets/images/PhoneBlue/three-phones.png">
+		</div>
+
+		<div class="next">
+			<a href="#"  onclick="plusSlides(1)">
+				<img alt="" src="assets/images/PhoneSlider/arrow-right.png">
+			</a>
+		</div>
+
 	</div>
 </main>
 
@@ -50,7 +63,8 @@
 	<div class="wrapper">
 		<h2 class="services__title">Our Services</h2>
 		<p class="services__description">Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum. Duis mollis,
-			non commodo luctus, nisi eratitor porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac cursus
+			non commodo luctus, nisi eratitor porttitor ligula, eget lacinia odio sem nec elit. Fusce dapibus, tellus ac
+			cursus
 			commo, condimentum nibh.
 		</p>
 
@@ -97,7 +111,8 @@
 				<img class="service__icon" src="assets/images/OurServices/bubble.png" alt="">
 				<div class="service__content">
 					<h3 class="service__title">24/7 Support</h3>
-					<p class="service__description">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem eratellen.
+					<p class="service__description">Vivamus vel quam lacinia, tincidunt dui non, vehicula nisi. Nulla a sem
+						eratellen.
 						pellentesque egestas venenatis.</p>
 				</div>
 			</div>
@@ -171,7 +186,8 @@
 	<div class="wrapper">
 		<h2 class="about-us__section-title section-title">About Us</h2>
 		<p class="about-us__section-description section-description">Fusce dapibus, tellus ac cursus commodo, tortor mauris
-			condimentum. Duis mollis, non commodo luctus, erat porttitor porttitor ligula, eget lacinia odio sem nec elit. Fusce
+			condimentum. Duis mollis, non commodo luctus, erat porttitor porttitor ligula, eget lacinia odio sem nec elit.
+			Fusce
 			dapibus, tellus tortor mauris condimentum nibm nibh.
 		</p>
 		<div class="about-us__layout-3-column layout-3-column">
@@ -236,7 +252,7 @@
 				<input class="feedback__field" type="text" name="subject" placeholder="Subject">
 				<textarea class="feedback__textarea feedback__field" name="description"
 				          placeholder="Describe your object in detail..."></textarea>
-				<button class="feedback__btn" type="submit" >Submit</button>
+				<button class="feedback__btn" type="submit">Submit</button>
 			</form>
 
 

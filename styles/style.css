@@ -30,6 +30,7 @@ a {
 	height: 95px;
 	background-color: #2d303a;
 	border-bottom: 6px solid #323645;
+
 }
 
 .logo {
@@ -46,7 +47,6 @@ a {
 	letter-spacing: -0.06rem;
 	text-transform: uppercase;
 }
-
 .logo__star {
 	margin-left: -1px;
 	color: #f06c64;
@@ -79,58 +79,65 @@ ul > li:not(:first-child)::before {
 	right: -10px;
 	color: #494e62;
 }
-
 .nav__item{
 	padding-left: 23px;
 	letter-spacing: 0.015em;
 }
-
 a:hover, .active {
 	color: #f06c64;
 	cursor: pointer;
 	border: none;
 }
+/*--------------------------------------------------*/
 
-.slider {
+#slider {
 	box-sizing: border-box;
 	height: 600px;
 	background-color: #ef6c64;
-	padding-top: 53px;
 	border-bottom: 6px solid #ea666b;
 }
 
-.before {
-	display: inline-block;
-	height: 100%;
+.container-slider{
+	display: flex;
+	position: relative;
+	width: 900px;
+	height: 600px;
+	line-height: 600px;
+	text-align: center;
+}
+.mySlides{
+	display:block;
+	position:relative;
+	padding: 0 auto;
+	margin: 0 auto;
+}
+.mySlides  img{
 	vertical-align: middle;
 }
-
-.arrow-left {
-	display: inline-block;
-	vertical-align: middle;
+.prev, .next {
+	cursor: pointer;
+	width: 16px;
 }
 
-.iphone-vertical {
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: 49px;
+.next{
+	position:absolute;
+	right: 0;
 }
-
-.iphone-horizontal {
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: 68px;
-}
-
-.arrow-right {
-	display: inline-block;
-	vertical-align: middle;
-	margin-left: 49px;
+.prev{
+	position:absolute;
+	left: 0;
 }
 
 .slider a:hover, .slider a:active {
 	cursor: pointer;
 }
+.iphone-vertical{
+	position:relative;
+}
+.iphone-horizontal{
+	position:relative;
+}
+
 
 /*----------------------------------------*/
 
