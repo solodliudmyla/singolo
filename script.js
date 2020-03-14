@@ -12,15 +12,15 @@ for (let i = 0; i < navItems.length; i++) {
 }
 
 
-//  Slider----------------------------------------------------------------------
+//  slide switch----------------------------------------------------------------------
 
 let backgroundColorsSlider=['#ef6c64','#0000FF'];
 let slideIndex = 1;
-showSlides(slideIndex);
+showAnotherSlide(slideIndex);
 
 // Next/previous controls
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+  showAnotherSlide(slideIndex += n);
   changeBackgroundColor(slideIndex)
 }
 function changeBackgroundColor(n) {
@@ -28,7 +28,7 @@ function changeBackgroundColor(n) {
   slider.style.backgroundColor=backgroundColorsSlider[n-1];
 }
 
-function showSlides(n) {
+function showAnotherSlide(n) {
   let i;
   let slides = document.getElementsByClassName("mySlides");
   if (n > slides.length) {slideIndex = 1}
@@ -38,3 +38,19 @@ function showSlides(n) {
   }
   slides[slideIndex-1].style.display = "block";
 }
+
+// Activating Phone Screens---------------------------------------------------
+
+document.querySelector('.iphone-vertical').addEventListener('click',()=>{
+  if (document.querySelector('.iphone-vertical-display').style.display==='none'){
+    document.querySelector('.iphone-vertical-display').style.display='block'}
+    else document.querySelector('.iphone-vertical-display').style.display='none'
+  }
+);
+document.querySelector('.iphone-horizontal').addEventListener('click',()=>{
+    if (document.querySelector('.iphone-horizontal-display').style.display==='none'){
+      document.querySelector('.iphone-horizontal-display').style.display='block'}
+    else document.querySelector('.iphone-horizontal-display').style.display='none'
+  }
+);
+

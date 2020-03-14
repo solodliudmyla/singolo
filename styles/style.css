@@ -106,12 +106,16 @@ a:hover, .active {
 	text-align: center;
 }
 .mySlides{
-	display:block;
-	position:relative;
-	padding: 0 auto;
 	margin: 0 auto;
 }
+
+.phones{
+	display:flex;
+}
 .mySlides  img{
+	vertical-align: middle;
+}
+.phones img{
 	vertical-align: middle;
 }
 .prev, .next {
@@ -138,7 +142,16 @@ a:hover, .active {
 	position:relative;
 }
 
-
+.iphone-vertical-display{
+	position: absolute;
+	top:-10px;
+	left:15px;
+}
+.iphone-horizontal-display{
+	position: absolute;
+	top:-12px;
+	left:60px;
+}
 /*----------------------------------------*/
 
 .services {
