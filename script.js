@@ -78,3 +78,20 @@ for (let i = 0; i < tabItems.length; i++) {
     this.className += " tab-active";
   });
 }
+
+//---Portfolio Image Interaction-----------------------------------------------------------------------
+
+let s= document.querySelector(".portfolio__layout-4-column");
+let k=s.querySelectorAll(".portfolio__image img");
+for (let i = 0; i < k.length; i++) {
+  k[i].addEventListener("click",changeBorder)
+}
+function changeBorder(e) {
+  for (let i = 0; i < k.length; i++) {
+console.log(k[i].style.border);
+  if (k[i].style.border==='5px solid rgb(240, 108, 100)'){
+    k[i].style.border=''
+  }
+    e.currentTarget.style.border='5px solid rgb(240, 108, 100)'
+  }
+}
