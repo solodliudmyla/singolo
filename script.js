@@ -3,11 +3,11 @@ let header = document.getElementById("nav__menu");
 let navItems = header.getElementsByClassName("nav__item");
 for (let i = 0; i < navItems.length; i++) {
   navItems[i].addEventListener("click", function() {
-    let current = document.getElementsByClassName("active");
+    let current = document.getElementsByClassName("nav__item-active");
     if (current.length > 0) {
-      current[0].className = current[0].className.replace(" active", "");
+      current[0].className = current[0].className.replace(" nav__item-active", "");
     }
-    this.className += " active";
+    this.className += " nav__item-active";
   });
 }
 
@@ -29,11 +29,10 @@ function changeBackgroundColor(n) {
 }
 
 function showAnotherSlide(n) {
-  let i;
   let slides = document.getElementsByClassName("mySlides");
   if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
+  for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = "none";
   }
   slides[slideIndex-1].style.display = "block";
@@ -54,3 +53,28 @@ document.querySelector('.iphone-horizontal').addEventListener('click',()=>{
   }
 );
 
+// Portfolio Tab Switching -----------------------------------------------------------------
+
+document.querySelector('.tabs-line').addEventListener('click',changeImages);
+function changeImages() {
+ let imgArray= document.querySelectorAll('.portfolio__image img');
+  let firstImg= imgArray[0].src;
+ for (let i=1;i<imgArray.length;i++){
+   imgArray[i-1].src=imgArray[i].src;
+}
+ imgArray[imgArray.length-1].src=firstImg;
+}
+
+// active tabs-----------------------------------------------------------------------------------
+
+let tabsLine = document.querySelector(".tabs-line");
+let tabItems = tabsLine.querySelectorAll(".tab");
+for (let i = 0; i < tabItems.length; i++) {
+  tabItems[i].addEventListener("click",function() {
+    let current = document.getElementsByClassName("tab-active");
+    if (current.length > 0) {
+      current[0].className = current[0].className.replace(" tab-active", "");
+    }
+    this.className += " tab-active";
+  });
+}

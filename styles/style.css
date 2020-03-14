@@ -72,6 +72,8 @@ a {
 	font-size: 12px;
 	font-weight: 700;
 	color: #ffffff;
+	padding-left: 23px;
+	letter-spacing: 0.015em;
 }
 ul > li:not(:first-child)::before {
 	content: "·";
@@ -79,11 +81,8 @@ ul > li:not(:first-child)::before {
 	right: -10px;
 	color: #494e62;
 }
-.nav__item{
-	padding-left: 23px;
-	letter-spacing: 0.015em;
-}
-a:hover, .active {
+
+a:hover,.nav__item-active {
 	color: #f06c64;
 	cursor: pointer;
 	border: none;
@@ -255,12 +254,12 @@ a:hover, .active {
 
 }
 
-.buttons-line {
+.tabs-line {
 	margin-top: 10px;
 	margin-bottom: 9px;
 }
 
-.btn {
+.tab {
 	display: inline-block;
 	border: 1px solid #666d89;
 	background-color: #2D303A;
@@ -276,7 +275,7 @@ a:hover, .active {
 	line-height: 21px;
 }
 
-.btn:hover {
+.tab:hover, .tab-active  {
 	border: 1px solid #dedede;
 	color: #dedede;
 }
@@ -381,10 +380,7 @@ a:hover, .active {
 	line-height: 21px;
 }
 
-.btn:hover {
-	border: 1px solid #dedede;
-	color: #dedede;
-}
+
 
 /*---------------section stiles------------------------------*/
 
