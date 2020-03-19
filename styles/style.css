@@ -506,7 +506,21 @@ a:hover,.nav__item-active {
 
 :root {
 	--modal-duration: 1s;
-	--modal-color: #428bca;
+	--modal-color:  #666d89;
+
+}
+
+.button {
+	background: #666d89;
+	padding: 1em 2em;
+	color: #fff;
+	border: 0;
+	border-radius: 5px;
+	cursor: pointer;
+}
+
+.button:hover {
+	background: #666d89;
 }
 
 .modal {
@@ -547,20 +561,14 @@ a:hover,.nav__item-active {
 	background: #fff;
 }
 
-.modal-footer {
-	background: var(--modal-color);
-	padding: 10px;
-	color: #fff;
-	text-align: center;
-	border-bottom-left-radius: 5px;
-	border-bottom-right-radius: 5px;
+.modal-body p{
+	color: black;
 }
 
 .close {
 	color: #ccc;
-	float: right;
-	font-size: 30px;
-
+	font-size: 20px;
+	margin-top: 5px;
 }
 
 .close:hover,
@@ -578,3 +586,4 @@ a:hover,.nav__item-active {
 		opacity: 1;
 	}
 }
+
