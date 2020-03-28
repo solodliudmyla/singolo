@@ -170,7 +170,7 @@ margin:auto 2.2rem;
 .services {
 	box-sizing: border-box;
 	padding-top: 60px;
-	height: 500px;
+	height-min: 500px;
 	background-color: #f1f1f1;
 	border-bottom: 6px solid #ffffff;
 }
@@ -240,7 +240,7 @@ margin:auto 2.2rem;
 	box-sizing: border-box;
 	padding-top: 63px;
 	background-color: #2D303A;
-	height: 870px;
+	min-height: 870px;
 	border-bottom: 6px solid #323746;
 }
 
@@ -300,7 +300,7 @@ margin:auto 2.2rem;
 	flex-wrap: wrap;
 	justify-content: space-between;
 	overflow: hidden;
-	height: 610px;
+	min-height: 610px;
 }
 
 .portfolio__image {
@@ -314,7 +314,7 @@ margin:auto 2.2rem;
 /*<editor-fold desc="About-us">*/
 .about-us {
 	box-sizing: border-box;
-	height: 734px;
+	min-height: 734px;
 	border-bottom: 6px solid #ffffff;
 	background-color: #f2f2f2;
 }
@@ -326,12 +326,6 @@ margin:auto 2.2rem;
 .about-us__section-description {
 	padding-top: 17px;
 	line-height: 30px;
-}
-
-.layout-3-column {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: space-between;
 }
 
 .about-us__item {
@@ -406,7 +400,7 @@ margin:auto 2.2rem;
 /*<editor-fold desc="Contacts">*/
 .contacts {
 	background-color: #f06c64;
-	height: 648px;
+	min-height: 648px;
 	border-bottom: 6px solid #ea676b;
 	color: #f0d8d9;
 }
