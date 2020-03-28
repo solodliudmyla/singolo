@@ -9,8 +9,8 @@
 
 .wrapper {
 	max-width: 940px;
-	margin: 0 auto;
 	box-sizing: border-box;
+	margin: 0 auto;
 }
 
 body {
@@ -33,7 +33,6 @@ a {
 .header-container{
 	display: flex;
 	justify-content: space-between;
-	margin: 0 auto;
 }
 .logo {
 	display: inline-block;
@@ -98,102 +97,59 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 	cursor: pointer;
 	border: none;
 }
-
+a:hover, a:active {
+	cursor: pointer;
+}
  #menu-checkbox, label{
 	display: none;
 }
-.Burger-menu-icon{
-
-
-}
-
 
 /*</editor-fold>*/
 
 
 /*<editor-fold desc="Slider">*/
-
+.iphone {
+	display: block;
+	max-width: 100%;
+}
 #slider {
+	box-sizing: border-box;
 	height: 600px;
 	background-color: #ef6c64;
 	border-bottom: 6px solid #ea666b;
 }
 
 .container-slider{
-	/*position: absolute;
-	width: 900px;*/
+	height: 594px;
+	position: relative;
 	display: flex;
-	height: 600px;
-	line-height: 600px;
-	text-align: center;
-	align-items: stretch;
-	align-self: center;
 	justify-content: space-between;
-	flex-wrap: wrap;
+	align-items: center;
 	flex-direction: row;
-}
-.mySlides{
-	margin: 0 auto;
-}
-
-.phones{
-	display:flex;
-}
-.mySlides  img{
-	vertical-align: middle;
-}
-.phones img{
-	vertical-align: middle;
-}
-.prev, .next {
-	cursor: pointer;
-	width: 16px;
+	flex-wrap: nowrap;
 }
 
 .next{
-	/*position:absolute;*/
 	right: 0;
+	cursor: pointer;
+	width: 16px;
+	display: inline-block;
 }
 .prev {
-	/*position: absolute;*/
 	left: 0;
-}
-
-.slider {
-	box-sizing: border-box;
-	height: 600px;
-	background-color: #ef6c64;
-	padding-top: 53px;
-	border-bottom: 6px solid #ea666b;
-}
-
-.before {
+	cursor: pointer;
+	width: 16px;
 	display: inline-block;
-	height: 100%;
-	vertical-align: middle;
 }
 
 .iphone-vertical {
-	display: inline-block;
 	vertical-align: middle;
-	margin-left: 49px;
+margin:auto 2.2rem;
 }
 
 .iphone-horizontal {
-	display: inline-block;
 	vertical-align: middle;
-	margin-left: 68px;
-}
-
-.slider a:hover, .slider a:active {
-	cursor: pointer;
-}
-
-.iphone-vertical{
-	position:relative;
-}
-.iphone-horizontal{
-	position:relative;
+	margin:auto 2.2rem;
 }
 
 .iphone-vertical-display{
@@ -297,7 +253,6 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 
 .portfolio__section-title {
 	display: block;
-
 }
 
 .section-description {
@@ -311,7 +266,6 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 
 .portfolio__section-description {
 	padding-top: 17px;
-
 }
 
 .tabs-line{
@@ -348,7 +302,6 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 	overflow: hidden;
 	height: 610px;
 }
-
 
 .portfolio__image {
 	width: 220px;
@@ -461,7 +414,6 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 .contacts__section-title {
 	padding-top: 62px;
 	color: #f0d8d9;
-
 }
 
 .contacts__section-description {
@@ -576,7 +528,6 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 :root {
 	--modal-duration: 1s;
 	--modal-color:  #666d89;
-
 }
 
 .button {
@@ -657,7 +608,7 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 }
 /*</editor-fold>*/
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 500px){
 	#menu-checkbox {
 		position: absolute;
 		top: -9999px;
@@ -667,25 +618,23 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 	#menu-checkbox:focus {
 		background: none;
 	}
-	#menu-checkbox:checked ~ .toggle-menu {
-		background: url(../assets/images/MobileAdaptive/Burger-menu-icon-vertical.svg);
-		width:21px;
-		height:26px;
-	}
+
 	label {
 		position: absolute;
 		float: left;
 		cursor: pointer;
 		margin-left: 20px;
 		margin-top: 26px;
-		display: flex;
+		display:block;
 		z-index: 999;
 
 		background: url(../assets/images/MobileAdaptive/Burger-menu-icon-horizontal.svg);
 		width:25px;
 		height:20px;
 	}
-
+	#menu-checkbox:checked ~ .toggle-menu {
+		transform: rotate(45deg);
+	}
 
 	.Burger-menu-icon{
 		margin: 0;
@@ -698,12 +647,6 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 		margin-left:71px;
 		z-index: 99;
 	}
-
-
-
-	/*#menu-checkbox:checked ~ #menu-icon {*/
-	/*	src="assets/images/MobileAdaptive/Burger-menu-icon-horizontal.svg"*/
-	/*}*/
 
 	.nav{
 	  display: none;
@@ -736,75 +679,15 @@ a:hover,.nav__link-active, .nav a:hover, .nav a:active {
 }
 
 
-
-
-
-
-
-
-
-
-/*
-@media only screen and (max-width: 800px) {
-	header {
-		padding: 20px 0;
+@media screen and (max-width: 768px) {
+	.wrapper {
+		max-width: 688px;
+		margin: 0 40px;
 	}
 
-	#logo {
-		padding: 0;
-	}
-
-	#menu-checkbox[type=checkbox] {
-		position: absolute;
-		top: -9999px;
-		left: -9999px;
-		background: none;
-	}
-
-	#menu-checkbox[type=checkbox]:focus {
-		background: none;
-	}
-
-	label {
-		float: right;
-		padding: 8px 0;
-		display: inline-block;
-		cursor: pointer;
-	}
-
-	#menu-checkbox:checked ~ nav {
-		display: block;
-	}
-
-	nav {
-		display: none;
-		position: absolute;
-		right: 0;
-		top: 53px;
-		background-color: #002e5b;
-		padding: 0;
-		z-index: 99;
-		margin-right: 60px;
-	}
-
-	nav ul {
-		width: auto;
-	}
-
-	nav ul li {
-		float: none;
-		padding: 0px;
-		width: 100%;
-		display: table;
-	}
-
-	nav ul li a {
-		color: #FFF;
-		font-size: 15px;
-		padding: 10px 20px;
-		display: block;
-		border-bottom: 1px solid rgba(225, 225, 225, 0.1);
-	}
+}
 
 
-}*/
+
+
+

@@ -30,7 +30,7 @@ function changeBackgroundColor(n) {
 }
 
 function showAnotherSlide(n) {
-  let slides = document.getElementsByClassName('mySlides');
+  let slides = document.getElementsByClassName('two-slides');
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -40,7 +40,7 @@ function showAnotherSlide(n) {
   for (let i = 0; i < slides.length; i++) {
     slides[i].style.display = 'none';
   }
-  slides[slideIndex - 1].style.display = 'block';
+  slides[slideIndex - 1].style.display = 'inline-flex';
 }
 
 // Activating Phone Screens---------------------------------------------------
