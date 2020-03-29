@@ -27,6 +27,7 @@ function plusSlides(n) {
 function changeBackgroundColor(n) {
   let slider = document.querySelector('#slider');
   slider.style.backgroundColor = backgroundColorsSlider[n - 1];
+  slider.style.borderBottomColor = backgroundColorsSlider[n - 1];
 }
 
 function showAnotherSlide(n) {
