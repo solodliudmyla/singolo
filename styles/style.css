@@ -344,9 +344,10 @@ a:hover, a:active, .prev, .next {
 }
 
 .portfolio__image {
-	width: 220px;
-	height: 187px;
+	/*width: 220px;
+	height: 187px;*/
 	margin: 10px 0;
+	width: 23.5%;
 }
 
 /*</editor-fold>*/
@@ -647,6 +648,15 @@ a:hover, a:active, .prev, .next {
 /*</editor-fold>*/
 
 @media screen and (max-width: 374px) {
+	.portfolio__image {
+		width: 100%;
+		align-items: center;
+		display: flex;
+	}
+
+	.portfolio__image img {
+		margin: 5px auto;
+	}
 }
 
 @media screen and (min-width: 375px) and (max-width: 767px) {
@@ -722,16 +732,44 @@ a:hover, a:active, .prev, .next {
 		margin: 0 auto;
 	}
 
-	.wrapper{
+	.wrapper {
 		margin: auto 30px;
 	}
-	.services{
-		padding-top:27px ;
+
+	.services {
+		padding-top: 27px;
 		margin-bottom: -6px;
 	}
+
 	.services__description {
 		margin-bottom: 25px;
 	}
+
+	.portfolio__image {
+		width: calc((151 * 100%) / 315);
+		margin: 0 0 16px;
+	}
+
+	.portfolio__image img {
+		width: 100%;
+	}
+
+	.layout-4-column {
+		max-height: calc(100vw * 1.49);
+		height: calc(100vw * 1.49);
+		margin-top: 20px;
+		min-height: 0;
+	}
+
+	.portfolio {
+		padding-top: 45px;
+		margin-bottom: -25px;
+	}
+
+	.tabs-line {
+		margin-top: 17px;
+	}
+
 }
 
 @media screen and (min-width: 768px) and (max-width: 1019px) {
@@ -748,19 +786,33 @@ a:hover, a:active, .prev, .next {
 		padding: 0 calc(100% * 0.055);
 	}
 
-.services{
-	padding-top: 40px;
-	padding-bottom: 15px;
-}
+	.services {
+		padding-top: 40px;
+		padding-bottom: 15px;
+	}
 
-.service__item{
-	margin-bottom: 55px;
-}
+	.service__item {
+		margin-bottom: 55px;
+	}
+
 	.services__description {
 		margin-bottom: 24px;
 	}
-}
 
+	.tabs-line {
+		margin-bottom: 20px;
+	}
+
+	.portfolio {
+		padding-bottom: 45px;
+		margin-bottom: -15px;
+	}
+
+	.portfolio__image {
+		width: 31.4%;
+	}
+
+}
 
 @media screen and (min-width: 1020px) {
 	.container-slider {
@@ -773,6 +825,10 @@ a:hover, a:active, .prev, .next {
 
 	.iphone-vertical, .iphone-horizontal {
 		margin: 0;
+	}
+
+	.portfolio {
+		min-height: 870px;
 	}
 }
 
