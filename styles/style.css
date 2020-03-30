@@ -339,15 +339,19 @@ a:hover, a:active, .prev, .next {
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: space-between;
-	overflow: hidden;
 	min-height: 610px;
 }
 
 .portfolio__image {
-	/*width: 220px;
-	height: 187px;*/
-	margin: 10px 0;
-	width: 23.5%;
+	width: calc(25% - 15px);
+	max-height: 187px;
+	margin-bottom: 20px;
+	visibility: visible !important;
+}
+.portfolio__image img {
+	width: 100%;
+	height: 100%;
+	transition: filter 0.3s
 }
 
 /*</editor-fold>*/
@@ -758,8 +762,9 @@ a:hover, a:active, .prev, .next {
 	}
 
 	.portfolio__image {
-		width: calc((151 * 100%) / 315);
-		margin: 0 0 16px;
+		width: calc(50% - 6px);
+		max-height: 128px;
+		margin-bottom: 14px;
 	}
 
 	.portfolio__image img {
@@ -767,15 +772,12 @@ a:hover, a:active, .prev, .next {
 	}
 
 	.layout-4-column {
-		max-height: calc(100vw * 1.49);
-		height: calc(100vw * 1.49);
-		margin-top: 20px;
-		min-height: 0;
+		margin: 15px 30px 0 30px;
 	}
 
 	.portfolio {
 		padding-top: 45px;
-		margin-bottom: -25px;
+		padding-bottom: 21px;
 	}
 
 	.tabs-line {
@@ -841,6 +843,10 @@ a:hover, a:active, .prev, .next {
 }
 
 @media screen and (min-width: 768px) and (max-width: 1019px) {
+
+	nav{
+		margin-top: 35px;
+	}
 	.wrapper {
 		max-width: 688px;
 		margin: 0 40px;
@@ -856,28 +862,28 @@ a:hover, a:active, .prev, .next {
 
 	.services {
 		padding-top: 40px;
-		padding-bottom: 15px;
+		padding-bottom: 18px;
 	}
 
 	.service__item {
-		margin-bottom: 55px;
+		margin-bottom: 50px;
 	}
 
 	.services__description {
-		margin-bottom: 24px;
+		margin-bottom: 34px;
 	}
 
 	.tabs-line {
-		margin-bottom: 20px;
+		margin-bottom: 25px;
 	}
 
 	.portfolio {
 		padding-bottom: 45px;
-		margin-bottom: -15px;
 	}
 
 	.portfolio__image {
-		width: 31.4%;
+		width: calc(33% - 11px);
+		max-height: 184px;
 	}
 	.about-us{
 		padding-bottom: 60px;
