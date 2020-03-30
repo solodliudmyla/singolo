@@ -958,6 +958,13 @@ a:hover, a:active, .prev, .next {
 	.contacts{
 		min-height: 648px;
 	}
+.service__item{
+	margin-right: 4px;
+	margin-bottom: 26px;
+}
+.feedback__form{
+	padding-bottom: 0;
+}
 
 }
 
