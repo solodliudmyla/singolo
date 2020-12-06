@@ -1,37 +1,27 @@
-// active header menu
-let header = document.getElementById('nav__menu');
-let navItems = header.getElementsByClassName('nav__item');
-for (let i = 0; i < navItems.length; i++) {
-  navItems[i].addEventListener('click', function() {
-    let current = document.getElementsByClassName('nav__item-active');
+
+// --- keep active a pushed menu item ---
+
+let navItems = document.querySelectorAll('.nav__link');
+navItems.forEach(el => {
+  el.addEventListener('click', () => {
+    let current = document.querySelectorAll('.nav__item-active');
     if (current.length > 0) {
-      current[0].className = current[0].className.replace(' nav__item-active', '');
+      current[0].className = current[0].className.replace('nav__item-active', '');
     }
-    this.className += ' nav__item-active';
+    el.className += ' nav__item-active';
   });
-}
+});
 
+// --- slide switch ---
 
-//  slide switch----------------------------------------------------------------------
-
-let backgroundColorsSlider = ['#ef6c64', '#0000FF'];
-let slideIndex = 1;
-showAnotherSlide(slideIndex);
-
-// Next/previous controls
-function plusSlides(n) {
-  showAnotherSlide(slideIndex += n);
-  changeBackgroundColor(slideIndex);
-}
-
-function changeBackgroundColor(n) {
+const changeBackgroundColor = (n) => {
   let slider = document.querySelector('#slider');
   slider.style.backgroundColor = backgroundColorsSlider[n - 1];
   slider.style.borderBottomColor = backgroundColorsSlider[n - 1];
-}
+};
 
-function showAnotherSlide(n) {
-  let slides = document.getElementsByClassName('two-slides');
+const showAnotherSlide = (n) => {
+  let slides = document.querySelectorAll('.two-slides');
   if (n > slides.length) {
     slideIndex = 1;
   }
@@ -42,9 +32,17 @@ function showAnotherSlide(n) {
     slides[i].style.display = 'none';
   }
   slides[slideIndex - 1].style.display = 'inline-flex';
-}
+};
+const plusSlides = (n) => {
+  showAnotherSlide(slideIndex += n);
+  changeBackgroundColor(slideIndex);
+};
 
-// Activating Phone Screens---------------------------------------------------
+let backgroundColorsSlider = ['#ef6c64', '#0000FF'];
+let slideIndex = 1;
+showAnotherSlide(slideIndex);
+
+// --- Activating Phone Screens ---
 
 document.querySelector('.iphone-vertical').addEventListener('click', () => {
     if (document.querySelector('.iphone-vertical-display').style.display === 'none') {
@@ -59,67 +57,62 @@ document.querySelector('.iphone-horizontal').addEventListener('click', () => {
   }
 );
 
-// Portfolio Tab Switching -----------------------------------------------------------------
+// --- Portfolio Tab Switching ---
 
-document.querySelector('.tabs-line').addEventListener('click', changeImages);
-
-function changeImages() {
+const changeImages = () => {
   let imgArray = document.querySelectorAll('.portfolio__image img');
   let firstImg = imgArray[0].src;
   for (let i = 1; i < imgArray.length; i++) {
     imgArray[i - 1].src = imgArray[i].src;
   }
   imgArray[imgArray.length - 1].src = firstImg;
-}
+};
+document.querySelector('.tabs-line').addEventListener('click', changeImages);
 
-// active tabs-----------------------------------------------------------------------------------
+// --- add active tab style ---
 
-let tabsLine = document.querySelector('.tabs-line');
-let tabItems = tabsLine.querySelectorAll('.tab');
-for (let i = 0; i < tabItems.length; i++) {
-  tabItems[i].addEventListener('click', function() {
-    let current = document.getElementsByClassName('tab-active');
+let tabItems = document.querySelectorAll('.tab');
+tabItems.forEach(el => {
+  el.addEventListener('click', () => {
+    let current = document.querySelectorAll('.tab-active');
     if (current.length > 0) {
-      current[0].className = current[0].className.replace(' tab-active', '');
+      current[0].className = current[0].className.replace('tab-active', '');
     }
-    this.className += ' tab-active';
+    el.className += ' tab-active';
   });
-}
 
-//---Portfolio Image Interaction-----------------------------------------------------------------------
+});
 
-let s = document.querySelector('.portfolio__layout-4-column');
-let k = s.querySelectorAll('.portfolio__image img');
-for (let i = 0; i < k.length; i++) {
-  k[i].addEventListener('click', changeBorder);
-}
+// --- Portfolio Image Interaction ---
 
-function changeBorder(e) {
-  for (let i = 0; i < k.length; i++) {
-    console.log(k[i].style.border);
-    if (k[i].style.border === '5px solid rgb(240, 108, 100)') {
-      k[i].style.border = '';
+let portfolioImgArr = document.querySelectorAll('.portfolio__image img');
+
+const changeBorder = (e) => {
+  for (let i = 0; i < portfolioImgArr.length; i++) {
+    if (portfolioImgArr[i].style.border === '5px solid rgb(240, 108, 100)') {
+      portfolioImgArr[i].style.border = '';
+      portfolioImgArr[i].style.filter = '';
     }
     e.currentTarget.style.border = '5px solid rgb(240, 108, 100)';
+    e.currentTarget.style.filter = 'brightness(70%)';
   }
-}
+};
 
-//----modal window-------------------------------------------------------------------------------------------------------
+portfolioImgArr.forEach(el => el.addEventListener('click', changeBorder));
 
-//  Get DOM Elements
+// --- Submit modal window ---
+
 const form = document.getElementById('form');
 const modal = document.querySelector('#my-modal');
 const closeBtn = document.querySelector('.close');
 
-// Events
 form.addEventListener('submit', onSubmitForm);
 closeBtn.addEventListener('click', closeModal);
 
-
 function onSubmitForm(event) {
   event.preventDefault();
-  const subject = document.getElementById('feedback__subject').value;
-  const description = document.getElementById('feedback__description').value;
+  const subject = document.querySelector('#feedback__subject').value;
+  const description = document.querySelector('#feedback__description').value;
   openModal(subject, description);
 }
 
@@ -138,11 +131,12 @@ function clearForm() {
   let formLine = document.querySelector('.feedback__form');
   let formItems = formLine.querySelectorAll('.feedback__field');
   for (let i = 0; i < formItems.length; i++) {
-    formItems[i].value=''
+    formItems[i].value = '';
   }
 }
 
 // Limit textarea chars
+
 function limitText(limitField, limitNum) {
   if (limitField.value.length > limitNum) {
     limitField.value = limitField.value.substring(0, limitNum);
