@@ -97,7 +97,7 @@ nav {
 	color: #494e62;
 }
 
-a:hover, .nav__item-active, .nav a:hover, .nav a:active {
+a:hover, .nav .active, .nav a:hover, .nav a:active {
 	color: #f06c64;
 	cursor: pointer;
 	border: none;
@@ -330,7 +330,7 @@ a:hover, a:active, .prev, .next {
 	line-height: 21px;
 }
 
-.tab:hover, .tab-active {
+.tab:hover, .tab .active {
 	border: 1px solid #dedede;
 	color: #dedede;
 }
@@ -349,8 +349,12 @@ a:hover, a:active, .prev, .next {
 
 .portfolio__image img {
 	width: 100%;
-	transition: filter 0.2s;
 	border: 5px solid rgb(240, 108, 100, 0);
+}
+
+.portfolio__image .active {
+	border: 5px solid rgb(240, 108, 100);
+	filter: brightness(70%);
 }
 
 /*</editor-fold>*/

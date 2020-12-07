@@ -1,14 +1,9 @@
-
-// --- keep active a pushed menu item ---
-
 let navItems = document.querySelectorAll('.nav__link');
 navItems.forEach(el => {
   el.addEventListener('click', () => {
-    let current = document.querySelectorAll('.nav__item-active');
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace('nav__item-active', '');
-    }
-    el.className += ' nav__item-active';
+    document.querySelectorAll('.nav__menu .active')
+      .forEach(el => el.classList.remove('active'));
+    el.classList.add('active');
   });
 });
 
@@ -74,31 +69,22 @@ document.querySelector('.tabs-line').addEventListener('click', changeImages);
 let tabItems = document.querySelectorAll('.tab');
 tabItems.forEach(el => {
   el.addEventListener('click', () => {
-    let current = document.querySelectorAll('.tab-active');
-    if (current.length > 0) {
-      current[0].className = current[0].className.replace('tab-active', '');
-    }
-    el.className += ' tab-active';
+    document.querySelectorAll('.tab .active')
+      .forEach(el => el.classList.remove('active'));
+    el.classList.add('active');
   });
-
 });
 
 // --- Portfolio Image Interaction ---
 
 let portfolioImgArr = document.querySelectorAll('.portfolio__image img');
-
-const changeBorder = (e) => {
-  for (let i = 0; i < portfolioImgArr.length; i++) {
-    if (portfolioImgArr[i].style.border === '5px solid rgb(240, 108, 100)') {
-      portfolioImgArr[i].style.border = '';
-      portfolioImgArr[i].style.filter = '';
-    }
-    e.currentTarget.style.border = '5px solid rgb(240, 108, 100)';
-    e.currentTarget.style.filter = 'brightness(70%)';
-  }
-};
-
-portfolioImgArr.forEach(el => el.addEventListener('click', changeBorder));
+portfolioImgArr.forEach(el => {
+  el.addEventListener('click', () => {
+    document.querySelectorAll('.portfolio__image .active')
+      .forEach(el => el.classList.remove('active'));
+    el.classList.add('active');
+  });
+});
 
 // --- Submit modal window ---
 
@@ -130,9 +116,7 @@ function closeModal() {
 function clearForm() {
   let formLine = document.querySelector('.feedback__form');
   let formItems = formLine.querySelectorAll('.feedback__field');
-  for (let i = 0; i < formItems.length; i++) {
-    formItems[i].value = '';
-  }
+  formItems.forEach(el => el.value = '');
 }
 
 // Limit textarea chars
