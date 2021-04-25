@@ -58,7 +58,7 @@ a {
 }
 
 /*<editor-fold desc="Nav">*/
-nav {
+.nav {
 	display: inline-block;
 	margin-top: 40px;
 	float: right;
@@ -90,6 +90,12 @@ nav {
 	transition: all 0.3s ease-out;
 }
 
+:target::before {
+	content: "";
+	display: block;
+	height: 95px;
+}
+
 .nav__item:not(:first-child)::before {
 	content: "·";
 	position: relative;
@@ -117,7 +123,7 @@ a:hover, a:active, .prev, .next {
 /*<editor-fold desc="Slider">*/
 
 #slider {
-	height: calc(100vw * 0.58);
+	height: calc(100vh - 85px);
 	background-color: #ef6c64;
 	border-bottom: 6px;
 	border-bottom-style: solid;
