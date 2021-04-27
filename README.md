@@ -1,2 +1,2 @@
 # singolo
-https://solodliudmyla.github.io/singolo/
+https://liudmyla-solod.github.io/singolo/
